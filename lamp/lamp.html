@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="style.css" rel="stylesheet" type="text/css">
+<title>Lamp</title>
+</head>
+<body>
+<div class="lamp">
+    <div class="bulb"></div>
+    <div class="cord"></div>
+</div>
+<button id="turnOn" onclick="toggleLight()">ON</button>
+<button id="turnOff" onclick="toggleLight()">OFF</button>
+
+    <script>
+        var isLightOn = false;
+
+        function toggleLight() {
+            var body = document.querySelector('body');
+            var bulb = document.querySelector('.bulb');
+            var turnOnButton = document.getElementById('turnOn');
+            var turnOffButton = document.getElementById('turnOff');
+
+            if (!isLightOn) {
+                bulb.style.backgroundColor = '#fce705';
+                body.style.backgroundColor = '#ffffff';
+                isLightOn = true;
+                turnOnButton.disabled = true;
+                turnOffButton.disabled = false;
+            } else {
+                bulb.style.backgroundColor = '#ffffff';
+                body.style.backgroundColor = '#919191';
+                isLightOn = false;
+                turnOnButton.disabled = false;
+                turnOffButton.disabled = true;
+            }
+        }
+    </script>
+</body>
+</html>

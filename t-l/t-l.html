@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="style.css" rel="stylesheet" type="text/css">
+<title>Traffic Light</title>
+</head>
+<body>
+<div class="traffic-light">
+  <div class="light red"></div>
+  <div class="light yellow"></div>
+  <div class="light green"></div>
+</div>
+
+<script>
+  function colorChange() {
+    var red = document.querySelector('.red');
+    var yellow = document.querySelector('.yellow');
+    var green = document.querySelector('.green');
+    
+    setInterval(function() {
+        red.style.backgroundColor = 'red';
+        setTimeout(function() {
+            red.style.backgroundColor = '';
+            yellow.style.backgroundColor = 'yellow';
+            setTimeout(function() {
+                yellow.style.backgroundColor = '';
+                green.style.backgroundColor = 'green';
+                setTimeout(function() {
+                    green.style.backgroundColor = '';
+                }, 2000);
+            }, 2000);
+        }, 2000);
+    }, 6000);
+  };
+
+  window.onload = function() {
+    colorChange();
+  };
+</script>
+</body>
+</html>
